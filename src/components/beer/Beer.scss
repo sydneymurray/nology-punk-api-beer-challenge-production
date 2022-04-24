@@ -1,3 +1,26 @@
 .beer{
-    
+    width: 235px;
+    background-color: rgb(221, 237, 243);
+    border-radius: 10px;
+    box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 20%);
+    padding-top: 1ch;
+    padding-bottom: 2ch;
+    *{
+        width: 220px;
+    }
+    &__name{
+        padding: 0.25ch;
+        height: 4.5ch;
+    }
+    &__image{
+        width: 70px;
+        height: 300px;
+        object-fit: cover;
+        margin: 1ch 0;
+    }
+    &__tagline{
+        height: 4ch;
+        margin: 1ch;
+    }
+
 }

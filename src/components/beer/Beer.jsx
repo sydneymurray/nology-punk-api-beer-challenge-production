@@ -18,10 +18,9 @@ const Beer = ({beer}) => {
     return <>
         <article className="beer" onClick={handleClick}>
             <h2 className="beer__name">{name}</h2>
-            <h3 className="beer__tagline">{tagline}</h3>
             <img className="beer__image" src={image_url} alt={name} />
-            <p className="beer__desc">{description}</p>
-            <p className="beer__abv">{abv}</p>
+            <h3 className="beer__tagline">{tagline}</h3>
+            <h4 className="beer__abv">Alcohol by Volume: {abv}%</h4>
         </article>    
     </>
 }

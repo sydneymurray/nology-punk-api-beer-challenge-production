@@ -3,10 +3,10 @@ import Beer from '../../components/beer/Beer'
 import "./Main.scss"
 
 const Main = ({beers}) => {
-
+    const filteredBeers = beers
     return <>
         <section className="main-container">
-            {beers.map((beer, index) => <Beer key={index} beer={beer}/>)}
+            {filteredBeers.map((beer, index) => <Beer key={index} beer={beer}/>)}
         </section>
     </>
 }

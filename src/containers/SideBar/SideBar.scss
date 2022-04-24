@@ -1,4 +1,9 @@
 .sidebar-container{
     grid-area: sidebar-container;
-    background-color: lightgreen;
+    width: 40ch;
+    background-color: rgb(221, 237, 243);
+    box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 20%);
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
