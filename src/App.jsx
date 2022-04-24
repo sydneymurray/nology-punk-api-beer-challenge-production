@@ -16,7 +16,7 @@ const App = () => {
     return <>
         <div className="app-container">
             <Header/>
-            <SideBar beerArray={beerArray} setBears={setBeers}
+            <SideBar beerArray={beerArray} setBeers={setBeers}
                 showHighABV={showHighABV} setShowHighABV={setShowHighABV}
                 showClassic={showClassic} setShowClassic={setShowClassic}
                 showAcidity={showAcidity} setShowAcidity={setShowAcidity}/>

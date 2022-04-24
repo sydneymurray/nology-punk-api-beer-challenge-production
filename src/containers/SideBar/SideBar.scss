@@ -1,9 +1,27 @@
 .sidebar-container{
     grid-area: sidebar-container;
-    width: 40ch;
+    display: grid;
+    width: 25ch;
     background-color: rgb(221, 237, 243);
     box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 20%);
+    padding-top: 2ch;
     margin-top: 20px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;  
+    max-height: 300px;
+    padding: 2ch;
+    padding-top: 2.5ch;
+}
+
+.options{
+    display: grid;
+    grid-template-columns: 1fr 2ch;
+       
+    &__label{
+        text-align: left;
+        margin-top: 2ch;
+    }
+    &__input{
+        margin-top: 3.2ch;
+    }
 }
