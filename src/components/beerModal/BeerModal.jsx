@@ -3,7 +3,7 @@ import "./BeerModal.scss"
 import Ingredients from '../ingredients/Ingredients'
 
 export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
-    const {id, name, tagline, description, image_url, abv, ingredients, food_pairing, brewers_tips} = selectedBeer
+    const {id, name, tagline, description, image_url, abv, ibu, ebc, ph, ingredients, food_pairing, brewers_tips} = selectedBeer
 
     let ingredientsList = null
     if (ingredients.length > 0) 
@@ -40,6 +40,12 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
                             {hops.name} {hops.amount.value}kg</li>)}
                     </ul>
                     <h2 className="brewery-info__ingredients-heading">Attributes</h2>
+                    <ul className="brewery-info__list">
+                        <li className="brewery-info__li">ABV {abv}%</li>
+                        <li className="brewery-info__li">IBU {ibu}</li>
+                        <li className="brewery-info__li">EBC {ebc}</li>
+                        <li className="brewery-info__li">pH {ph}</li>
+                    </ul>
 
                 </div>
             </article>
@@ -48,17 +54,3 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
 }
 
 
-/*
-
-        <article className="beer" onClick={handleClick}>
-            <h2 className="beer__name">{name}</h2>
-            <h3 className="beer__tagline">{tagline}</h3>
-            <img className="beer__image" src={image_url} alt={name} />
-            <p className="beer__desc">{description}</p>
-            <p className="beer__abv">{abv}</p>
-            <p className="beer__ingredients">{ingredientsList}</p>
-            <p className="beer__food_pairing">{food_pairing}</p>
-        </article>    
-
-
-*/
