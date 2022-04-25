@@ -15,7 +15,7 @@ const SideBar = (props) => {
                 <input type="text" value={searchText} onInput={handleInput}/>
             </div>
             <div className="options">
-                <h3 className="options__label">High ABV > 6%</h3>
+                <h3 className="options__label">High ABV &gt; 6%</h3>
                 <input className="options__input" type="checkbox" checked={showHighABV} onChange={() => setShowHighABV(!showHighABV)}/>
             </div>
             <div className="options">
@@ -23,7 +23,7 @@ const SideBar = (props) => {
                 <input className="options__input" type="checkbox" checked={showClassic} onChange={() => setShowClassic(!showClassic)}/>
             </div>
             <div className="options">
-                <h3 className="options__label">Acidity PH 4</h3>
+                <h3 className="options__label">Acidity PH &lt; 4</h3>
                 <input className="options__input" type="checkbox" checked={showAcidity} onChange={() => setShowAcidity(!showAcidity)}/>
             </div>
         </section>

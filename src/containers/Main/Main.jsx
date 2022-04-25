@@ -8,6 +8,7 @@ const Main = ({beers, searchText, setSearchText, setSelectedBeer, showHighABV, s
         let returnBeer = true
         
         if (showHighABV && beer.abv <= 6) returnBeer = false
+        if (showClassic && !beer.description.toUpperCase().includes("CLASSIC")) returnBeer = false 
         if (showAcidity && beer.ph >= 4) returnBeer = false
         if (searchText && !beer.name.toUpperCase().includes(searchText.toUpperCase())) returnBeer = false 
 

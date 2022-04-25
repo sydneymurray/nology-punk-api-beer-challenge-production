@@ -11,7 +11,7 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
                 <img className="beer-image" src={image_url} alt={name}/>
                 <div className="customer-info">
                     <h1 className="customer-info__heading">{name}</h1>
-                    <h2 className="customer-info__tagline">{tagline}</h2>
+                    <h2 className="customer-info__tagline"><em>{tagline}</em></h2>
                     <p className="customer-info__desc">{description}</p>
                     <h2 className="customer-info__food-heading">Deliciously complements dishes containing...</h2>
                     <ul className="customer-info__food-list">
