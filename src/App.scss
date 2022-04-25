@@ -1,11 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-align: center;
-  color: black;
-  box-sizing: border-box;
-}
+@import "./scss/base";
 
 .app-container{
   display: grid;
@@ -17,16 +10,3 @@
   padding: 1ch;
 }
 
-/*
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-*/
