@@ -1,0 +1,79 @@
+.beer-modal-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2ch;
+}
+
+.beer-modal{
+    display: grid;
+    grid-template:
+    "beer-image customer-info" auto
+    "beer-image brewery-info" auto/
+    auto 1fr;
+    padding: 3ch;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 10px;  
+}
+
+.beer-image{
+    grid-area: beer-image;
+    width: 40ch;
+} 
+
+.customer-info{
+    grid-area: customer-info;
+    max-width: 80ch;
+    height: 50%;
+    *{
+        margin: 1ch auto;
+    }
+    &__heading{
+        font-size: 3em;
+    }
+    &__desc{
+        text-align: justify;
+        padding-left: 2ch;
+        padding-right: 2ch;
+    }
+    &__food-list{
+        max-width: 40ch;
+        margin-left: 30%;
+        margin-right: 10%;
+    }
+    &__food-li{
+        text-align: left;
+    }
+}
+
+.brewery-info{
+    grid-area: brewery-info;
+    max-width: 80ch;
+    *{
+        margin: 1ch auto;
+    }
+    &__heading{
+        font-size: 3em;
+    }
+    &__tips{
+        text-align: justify;
+        padding-left: 2ch;
+        padding-right: 2ch;
+    }
+    &__list{
+        max-width: 40ch;
+        margin-left: 30%;
+        margin-right: 10%;
+    }
+    &__li{
+        text-align: left;
+    }
+}
+

@@ -20,7 +20,8 @@ const App = () => {
                 showHighABV={showHighABV} setShowHighABV={setShowHighABV}
                 showClassic={showClassic} setShowClassic={setShowClassic}
                 showAcidity={showAcidity} setShowAcidity={setShowAcidity}/>
-            <Main beers={beers} showHighABV={showHighABV} showClassic={showClassic} showAcidity={showAcidity}/>
+            <Main beers={beers} showHighABV={showHighABV} showClassic={showClassic} showAcidity={showAcidity}
+                setSelectedBeer={setSelectedBeer}/>
             {selectedBeer && <BeerModal selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>}
         </div>
     </>

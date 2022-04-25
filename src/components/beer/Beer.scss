@@ -24,3 +24,10 @@
     }
 
 }
+
+.beer:hover{
+    transform: scale(1.1);
+    background-color: rgb(250, 211, 211);
+    border: 1px solid lightgrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
