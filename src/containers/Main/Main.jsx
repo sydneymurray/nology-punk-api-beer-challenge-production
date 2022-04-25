@@ -3,20 +3,22 @@ import Beer from '../../components/beer/Beer'
 import "./Main.scss"
 
 const Main = ({beers, searchText, setSearchText, setSelectedBeer, showHighABV, showClassic, showAcidity}) => {
-    const filteredBeers = beers.map(beer => {
+    console.log(beers)
+    const filteredBeers = beers.filter(beer => {
         let returnBeer = true
         
-        if (showHighABV && !beer.abv) returnBeer = false
-        if (showAcidity && !beer.ph) returnBeer = false
-        if (searchText && !beer.name.includes(searchText)) returnBeer = false 
+        if (showHighABV && beer.abv <= 6) returnBeer = false
+        if (showAcidity && beer.ph >= 4) returnBeer = false
+        if (searchText && !beer.name.toUpperCase().includes(searchText.toUpperCase())) returnBeer = false 
 
         return returnBeer
     })
 
+    console.log(filteredBeers)
+
     return <>
         <section className="main-container">
-            {filteredBeers.map((beer, index) => <Beer key={index} beer={beer} 
-                setSelectedBeer={setSelectedBeer}/>)}
+            {filteredBeers.map((beer, index) => <Beer key={index} beer={beer} setSelectedBeer={setSelectedBeer}/>)}
         </section>
     </>
 }

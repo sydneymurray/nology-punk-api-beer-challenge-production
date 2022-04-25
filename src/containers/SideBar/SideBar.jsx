@@ -2,20 +2,17 @@ import React from 'react'
 import "./SideBar.scss"
 
 const SideBar = (props) => {
-    const {beerArray, setBeers, showHighABV, setShowHighABV, showClassic, setShowClassic, showAcidity, setShowAcidity} = props
+    const {searchText, setSearchText, showHighABV, setShowHighABV, showClassic, setShowClassic, showAcidity, setShowAcidity} = props
 
     const handleInput = (event) => {
-        let filteredBeers = beerArray.filter(beer => {
-            return beer.name.toUpperCase().includes(event.target.value.toUpperCase())
-        })
-        setBeers(filteredBeers)
+        setSearchText(event.target.value)
     }
 
     return <>
         <section className="sidebar-container">
             <div className="options-heading">
                 <h2>Search:</h2>
-                <input type="text" onInput={handleInput}/>
+                <input type="text" value={searchText} onInput={handleInput}/>
             </div>
             <div className="options">
                 <h3 className="options__label">High ABV > 6%</h3>
@@ -34,3 +31,4 @@ const SideBar = (props) => {
 }
 
 export default SideBar
+

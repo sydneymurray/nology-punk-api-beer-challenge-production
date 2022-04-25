@@ -17,9 +17,8 @@ const App = () => {
     return <>
         <div className="app-container">
             <Header/>
-            
-            <SideBar beerArray={beerArray} setBeers={setBeers}
-                searchText={searchText} setSearchText={setSearchText}
+
+            <SideBar searchText={searchText} setSearchText={setSearchText}
                 showHighABV={showHighABV} setShowHighABV={setShowHighABV}
                 showClassic={showClassic} setShowClassic={setShowClassic}
                 showAcidity={showAcidity} setShowAcidity={setShowAcidity}/>
@@ -34,3 +33,10 @@ const App = () => {
 
 export default App;
 
+
+/*
+
+beerArray={beerArray} setBeers={setBeers}
+                
+
+*/
