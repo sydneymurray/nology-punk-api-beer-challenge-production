@@ -1,12 +1,18 @@
 @import "./scss/base";
 
 .app-container{
-  display: grid;
-  grid-template:
-  "header-container header-container header-container" auto
-  ". sidebar-container main-container" auto /
-  0.1fr 40ch 1fr;
-  gap: 1ch;
-  padding: 1ch;
+    display: grid;
+    grid-template:
+    "header-container header-container header-container" auto
+    "beer-counter beer-counter beer-counter" auto
+    ". sidebar-container main-container" auto /
+    0.1fr 40ch 1fr;
+    gap: 1ch;
+    padding: 1ch;
+    &__beer-count{
+        position: sticky;
+        top: 100%;
+        margin-top: 2ch;  
+    }
 }
 

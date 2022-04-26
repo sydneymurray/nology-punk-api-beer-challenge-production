@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState, useEffect} from 'react';
 import './App.scss';
 import { BeerModal } from './components/beerModal/BeerModal';
 import Header from './containers/Header/Header';
@@ -7,12 +7,30 @@ import SideBar from './containers/SideBar/SideBar';
 import beerArray from "./data/data"
 
 const App = () => {
-    let [beers, setBeers] = useState(beerArray)
-    let [selectedBeer, setSelectedBeer] = useState(null)
-    let [searchText, setSearchText] = useState("")
-    let [showHighABV, setShowHighABV] = useState(false)
-    let [showClassic, setShowClassic] = useState(false)
-    let [showAcidity, setShowAcidity] = useState(false)
+    const [beers, setBeers] = useState([])
+    const [selectedBeer, setSelectedBeer] = useState(null)
+    const [searchText, setSearchText] = useState("")
+    const [showHighABV, setShowHighABV] = useState(false)
+    const [showClassic, setShowClassic] = useState(false)
+    const [showAcidity, setShowAcidity] = useState(false)
+    let fetchPageNumber = 1
+    let allBeers = []
+
+    const getBeers = page => {
+        if (fetchPageNumber > 20) return
+        console.log("Fetching: https://api.punkapi.com/v2/beers?page=" + page)
+        fetch("https://api.punkapi.com/v2/beers?page=" + page)
+            .then(resp => resp.json())
+            .then(newBeers => {
+                allBeers = [...allBeers, ...newBeers]
+                setBeers(allBeers)
+                fetchPageNumber++
+            })
+    }
+    useEffect(() => {getBeers(fetchPageNumber)},[]) 
+    useEffect(() => {setInterval(() => {getBeers(fetchPageNumber)}, 4000)},[]) 
+    
+    if (!beers) return
 
     return <>
         <div className="app-container">
@@ -23,20 +41,15 @@ const App = () => {
                 showClassic={showClassic} setShowClassic={setShowClassic}
                 showAcidity={showAcidity} setShowAcidity={setShowAcidity}/>
 
-            <Main beers={beers} searchText={searchText} setSearchText={setSearchText} showHighABV={showHighABV} 
-                showClassic={showClassic} showAcidity={showAcidity} setSelectedBeer={setSelectedBeer}/>
+            <Main beers={beers} searchText={searchText} setSearchText={setSearchText} 
+                showHighABV={showHighABV} showClassic={showClassic} showAcidity={showAcidity} 
+                selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>
 
             {selectedBeer && <BeerModal selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>}
+
         </div>
     </>
 }
 
 export default App;
 
-
-/*
-
-beerArray={beerArray} setBeers={setBeers}
-                
-
-*/

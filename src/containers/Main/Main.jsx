@@ -2,8 +2,8 @@ import React from 'react'
 import Beer from '../../components/beer/Beer'
 import "./Main.scss"
 
-const Main = ({beers, searchText, setSearchText, setSelectedBeer, showHighABV, showClassic, showAcidity}) => {
-    console.log(beers)
+const Main = (props) => {
+    const {beers, searchText, setSearchText, setSelectedBeer, showHighABV, showClassic, selectedBeer, showAcidity} = props
     const filteredBeers = beers.filter(beer => {
         let returnBeer = true
         
@@ -15,9 +15,8 @@ const Main = ({beers, searchText, setSearchText, setSelectedBeer, showHighABV, s
         return returnBeer
     })
 
-    console.log(filteredBeers)
-
     return <>
+        {!selectedBeer && <h2 className='beer-counter'>Available Beers: {beers.length}</h2>}
         <section className="main-container">
             {filteredBeers.map((beer, index) => <Beer key={index} beer={beer} setSelectedBeer={setSelectedBeer}/>)}
         </section>

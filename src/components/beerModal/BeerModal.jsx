@@ -15,25 +15,25 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
                     <p className="customer-info__desc">{description}</p>
                     <h2 className="customer-info__food-heading">Deliciously complements dishes containing...</h2>
                     <ul className="customer-info__food-list">
-                        {food_pairing.map(dish => <li className="customer-info__food-li">{dish}</li>)}
+                        {food_pairing.map((dish, index) => <li key={index} className="customer-info__food-li">{dish}</li>)}
                     </ul>
                 </div>
                 <div className="brewery-info">
                     <h1 className="brewery-info__heading">Brewers Information</h1>
                     <h2 className="customer-info__alcohol">Alcohol by Volume: {abv}%</h2>
-                    <p className="brewery-info__tips"><b>Tips: </b>{brewers_tips}</p>
+                    <p className="brewery-info__tips"><em><b>Tips: </b>{brewers_tips}</em></p>
                     <div className="brewery-info__container">
                         <div className="brewery-info-column">
                             <h2 className="brewery-info-column__ingredients-heading">Malts</h2>
                             <ul className="brewery-info__list">
-                                {ingredients.malt.map(malt => <li className="brewery-info-column__li">
+                                {ingredients.malt.map((malt, index) => <li key={index} className="brewery-info-column__li">
                                     {malt.name} {malt.amount.value}kg</li>)}
                             </ul>
                         </div>
                         <div className="brewery-info-column">
                             <h2 className="brewery-info-column__ingredients-heading">Hops</h2>
                             <ul className="brewery-info__list">
-                                {ingredients.hops.map(hops => <li className="brewery-info-column__li-hops">
+                                {ingredients.hops.map((hops, index) => <li key={index}className="brewery-info-column__li-hops">
                                     {hops.name} {hops.amount.value}kg</li>)}
                             </ul>
                         </div>
@@ -55,12 +55,3 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
 
 
 
-/*
-
-    let ingredientsList = null
-    if (ingredients.length > 0) 
-        ingredientsList = ingredients.map((ingredient, index) => <Ingredients ingredient={ingredient} key={index}/>)
-    else 
-        ingredientsList ="" 
-
-*/
