@@ -3,7 +3,7 @@ import Beer from '../../components/beer/Beer'
 import "./Main.scss"
 
 const Main = (props) => {
-    const {beers, searchText, setSearchText, setSelectedBeer, showHighABV, showClassic, selectedBeer, showAcidity} = props
+    const {beers, searchText, setSelectedBeer, showHighABV, showClassic, selectedBeer, showAcidity} = props
     const filteredBeers = beers.filter(beer => {
         let returnBeer = true
         

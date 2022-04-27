@@ -27,17 +27,17 @@ $column-width: 220px;
 
 .beer-image{
     grid-area: beer-image;
-    width: 25ch;
     margin-left: 2ch;
     margin-right: 2ch;
     margin-top: auto;
     margin-bottom: auto;
+    height: 850px;
+    width: auto;
 } 
 
 .customer-info{
     grid-area: customer-info;
     max-width: 80ch;
-    height: 50%;
     *{
         margin-top: 1ch;
     }

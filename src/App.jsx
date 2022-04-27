@@ -13,22 +13,25 @@ const App = () => {
     const [showHighABV, setShowHighABV] = useState(false)
     const [showClassic, setShowClassic] = useState(false)
     const [showAcidity, setShowAcidity] = useState(false)
-    let fetchPageNumber = 1
+    let fetchPageNumber = 0
     let allBeers = []
 
-    const getBeers = page => {
+    const getBeers = () => {
+        fetchPageNumber++
+        if (fetchPageNumber === 20 ) {
+            let beersSet = new Set (allBeers)
+            setBeers(Array.from(beersSet))
+        }
         if (fetchPageNumber > 20) return
-        console.log("Fetching: https://api.punkapi.com/v2/beers?page=" + page)
-        fetch("https://api.punkapi.com/v2/beers?page=" + page)
+        fetch("https://api.punkapi.com/v2/beers?page=" + fetchPageNumber)
             .then(resp => resp.json())
             .then(newBeers => {
                 allBeers = [...allBeers, ...newBeers]
                 setBeers(allBeers)
-                fetchPageNumber++
             })
     }
-    useEffect(() => {getBeers(fetchPageNumber)},[]) 
-    useEffect(() => {setInterval(() => {getBeers(fetchPageNumber)}, 4000)},[]) 
+    useEffect(() => {getBeers()},[]) 
+    useEffect(() => {setInterval(() => {getBeers()}, 1000)},[]) 
     
     if (!beers) return
 
@@ -53,3 +56,7 @@ const App = () => {
 
 export default App;
 
+/*
+    let beersSet = new Set (beers)
+    setBeers(Array.from(beersSet)
+*/

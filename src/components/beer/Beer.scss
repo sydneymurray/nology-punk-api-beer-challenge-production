@@ -1,3 +1,4 @@
+
 .beer{
     width: 235px;
     background-color: rgb(240, 247, 250);
@@ -9,11 +10,12 @@
         width: 220px;
     }
     &__name{
+        text-overflow: clip;
         padding: 0.25ch;
         height: 4.5ch;
     }
     &__image{
-        width: 70px;
+        width: auto;
         height: 300px;
         object-fit: cover;
         margin: 1ch 0;

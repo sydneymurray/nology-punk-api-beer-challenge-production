@@ -1,6 +1,6 @@
 import React from 'react'
 import "./BeerModal.scss"
-import Ingredients from '../ingredients/Ingredients'
+import blackBottle from "../../images/Empty-Bottle.webp"
 
 export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
     const {id, name, tagline, description, image_url, abv, ibu, ebc, ph, ingredients, food_pairing, brewers_tips} = selectedBeer
@@ -8,7 +8,7 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
     return <>
         <div className="beer-modal-background" onClick={() => setSelectedBeer(null)}>
             <article className="beer-modal">
-                <img className="beer-image" src={image_url} alt={name}/>
+                <img className="beer-image" src={image_url ? image_url : blackBottle} alt={name}/>
                 <div className="customer-info">
                     <h1 className="customer-info__heading">{name}</h1>
                     <h2 className="customer-info__tagline"><em>{tagline}</em></h2>
@@ -26,15 +26,19 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
                         <div className="brewery-info-column">
                             <h2 className="brewery-info-column__ingredients-heading">Malts</h2>
                             <ul className="brewery-info__list">
-                                {ingredients.malt.map((malt, index) => <li key={index} className="brewery-info-column__li">
-                                    {malt.name} {malt.amount.value}kg</li>)}
+                                {ingredients.malt.map((malt, index) => 
+                                    <li key={index} className="brewery-info-column__li">
+                                        {malt.name} {malt.amount.value}kg
+                                    </li>)}
                             </ul>
                         </div>
                         <div className="brewery-info-column">
                             <h2 className="brewery-info-column__ingredients-heading">Hops</h2>
                             <ul className="brewery-info__list">
-                                {ingredients.hops.map((hops, index) => <li key={index}className="brewery-info-column__li-hops">
-                                    {hops.name} {hops.amount.value}kg</li>)}
+                                {ingredients.hops.map((hops, index) => 
+                                    <li key={index}className="brewery-info-column__li-hops"> 
+                                        {hops.name} {hops.amount.value}kg
+                                    </li>)}
                             </ul>
                         </div>
                         <div className="brewery-info-column">

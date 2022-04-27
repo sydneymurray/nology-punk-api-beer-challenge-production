@@ -16,3 +16,15 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+   
+    .app-container{
+        grid-template:
+        " header-container" auto
+        "sidebar-container" auto
+        "beer-counter" auto
+        "main-container" auto /
+        1fr;
+    }
+}
+
