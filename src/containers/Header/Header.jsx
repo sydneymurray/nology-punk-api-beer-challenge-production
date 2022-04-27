@@ -5,7 +5,7 @@ const Header = () => {
 
     return <>
         <section className="header-container">
-            <h1 className="header-container__h1">Nology Bear API Challenge</h1>
+            <h1 className="header-container__h1">Nology Beer API Challenge</h1>
         </section>
     </>
 }

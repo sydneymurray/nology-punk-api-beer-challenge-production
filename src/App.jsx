@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import './App.scss';
 import { BeerModal } from './components/beerModal/BeerModal';
 import Header from './containers/Header/Header';
+import Hero from './containers/Hero/Hero';
 import Main from './containers/Main/Main';
 import SideBar from './containers/SideBar/SideBar';
 import beerArray from "./data/data"
@@ -38,7 +39,7 @@ const App = () => {
     return <>
         <div className="app-container">
             <Header/>
-
+            <Hero/>
             <SideBar searchText={searchText} setSearchText={setSearchText}
                 showHighABV={showHighABV} setShowHighABV={setShowHighABV}
                 showClassic={showClassic} setShowClassic={setShowClassic}

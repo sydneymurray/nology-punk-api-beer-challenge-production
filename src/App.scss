@@ -4,6 +4,7 @@
     display: grid;
     grid-template:
     "header-container header-container header-container" auto
+    "hero-container hero-container hero-container" auto
     "beer-counter beer-counter beer-counter" auto
     ". sidebar-container main-container" auto /
     2ch 25ch 1fr;
