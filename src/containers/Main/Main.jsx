@@ -16,7 +16,7 @@ const Main = (props) => {
     })
 
     return <>
-        {!selectedBeer && <h2 className='beer-counter'>Available Beers: {beers.length}</h2>}
+        {!selectedBeer && <h2 className='beer-counter' id="the-beers">Available Beers: {beers.length}</h2>}
         <section className="main-container">
             {filteredBeers.map((beer, index) => <Beer key={index} beer={beer} setSelectedBeer={setSelectedBeer}/>)}
         </section>

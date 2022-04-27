@@ -6,8 +6,10 @@ const Hero = () => {
 
 
     return <>
-        <section className='hero-container'>
-        </section>
+        <a href="#the-beers"  className='hero-container'>
+            <section>
+            </section>
+        </a>
     </>
 }
 

@@ -1,5 +1,9 @@
 @import "./scss/base";
 
+html {
+    scroll-behavior: smooth;
+  }
+
 .app-container{
     display: grid;
     grid-template:
