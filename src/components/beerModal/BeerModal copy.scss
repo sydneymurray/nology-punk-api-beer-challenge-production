@@ -23,7 +23,6 @@ $column-width: 220px;
     background-color: white;
     border: 5px solid rgb(88, 11, 11);
     border-radius: 10px;  
-    overflow: scroll;
 }
 
 .beer-image{
@@ -69,7 +68,7 @@ $column-width: 220px;
 
     &__heading{
         font-size: 3em;
-        max-width: 40ch;
+        width: 20ch;
         margin-left: auto;
         margin-right: auto;
     }
@@ -87,7 +86,6 @@ $column-width: 220px;
 
 .brewery-info-column{
     width: $column-width;
-    overflow: hidden;
     &__li{
         text-align: left;
         margin-left: 20%;
@@ -102,37 +100,3 @@ $column-width: 220px;
     }
 }
 
-@media screen and (max-width: 968px) {
-    .beer-modal-background{
-        overflow: scroll;
-    }
-    // .beer-modal{
-    //     overflow: scroll;
-    // }
-    .brewery-info,
-    .customer-info{
-        max-width: 40ch;
-    }
-    .brewery-info{
-        max-width: 40ch;
-    }
-    .response-no-display{
-        display: none;
-    }
-}
-
-@media screen and (max-width: 630px) {
-    .beer-modal-background{
-        overflow: scroll;
-    }
-    .beer-modal{
-        grid-template:
-        "beer-image" auto
-        "customer-info" auto
-        "brewery-info" auto/
-        1fr;
-    }
-    .beer-image{
-        display: none;
-    }
-}

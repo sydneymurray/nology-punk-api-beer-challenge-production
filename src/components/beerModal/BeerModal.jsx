@@ -3,7 +3,7 @@ import "./BeerModal.scss"
 import blackBottle from "../../images/Empty-Bottle.webp"
 
 export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
-    const {id, name, tagline, description, image_url, abv, ibu, ebc, ph, ingredients, food_pairing, brewers_tips} = selectedBeer
+    const {name, tagline, description, image_url, abv, ibu, ebc, ph, ingredients, food_pairing, brewers_tips} = selectedBeer
 
     return <>
         <div className="beer-modal-background" onClick={() => setSelectedBeer(null)}>
@@ -23,7 +23,7 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
                     <h2 className="customer-info__alcohol">Alcohol by Volume: {abv}%</h2>
                     <p className="brewery-info__tips"><em><b>Tips: </b>{brewers_tips}</em></p>
                     <div className="brewery-info__container">
-                        <div className="brewery-info-column">
+                        <div className="brewery-info-column response-no-display">
                             <h2 className="brewery-info-column__ingredients-heading">Malts</h2>
                             <ul className="brewery-info__list">
                                 {ingredients.malt.map((malt, index) => 
@@ -32,7 +32,7 @@ export const BeerModal = ({selectedBeer, setSelectedBeer}) => {
                                     </li>)}
                             </ul>
                         </div>
-                        <div className="brewery-info-column">
+                        <div className="brewery-info-column response-no-display">
                             <h2 className="brewery-info-column__ingredients-heading">Hops</h2>
                             <ul className="brewery-info__list">
                                 {ingredients.hops.map((hops, index) => 
