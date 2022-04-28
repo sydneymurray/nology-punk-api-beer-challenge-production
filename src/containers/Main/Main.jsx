@@ -3,7 +3,7 @@ import Beer from '../../components/beer/Beer'
 import "./Main.scss"
 
 const Main = (props) => {
-    const {beers, searchText, setSelectedBeer, showHighABV, showClassic, selectedBeer, showAcidity} = props
+    const {setDisplayedBeers, beers, searchText, setSelectedBeer, showHighABV, showClassic, selectedBeer, showAcidity} = props
     const filteredBeers = beers.filter(beer => {
         let returnBeer = true
         
@@ -14,6 +14,8 @@ const Main = (props) => {
 
         return returnBeer
     })
+    
+    setDisplayedBeers(filteredBeers.length)
 
     return <>
         {!selectedBeer && <h2 className='beer-counter' id="the-beers">Available Beers: {beers.length}</h2>}

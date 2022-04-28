@@ -14,6 +14,7 @@ const App = () => {
     const [showHighABV, setShowHighABV] = useState(false)
     const [showClassic, setShowClassic] = useState(false)
     const [showAcidity, setShowAcidity] = useState(false)
+    const [displayedBeers, setDisplayedBeers] = useState(0)
     let fetchPageNumber = 0
     let allBeers = []
 
@@ -40,14 +41,14 @@ const App = () => {
         <div className="app-container">
             <Header/>
             <Hero/>
-            <SideBar searchText={searchText} setSearchText={setSearchText}
+            <SideBar displayedBeers={displayedBeers} searchText={searchText} setSearchText={setSearchText}
                 showHighABV={showHighABV} setShowHighABV={setShowHighABV}
                 showClassic={showClassic} setShowClassic={setShowClassic}
                 showAcidity={showAcidity} setShowAcidity={setShowAcidity}/>
 
-            <Main beers={beers} searchText={searchText} setSearchText={setSearchText} 
-                showHighABV={showHighABV} showClassic={showClassic} showAcidity={showAcidity} 
-                selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>
+            <Main setDisplayedBeers={setDisplayedBeers} beers={beers} searchText={searchText} 
+                setSearchText={setSearchText} showHighABV={showHighABV} showClassic={showClassic}
+                showAcidity={showAcidity} selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>
 
             {selectedBeer && <BeerModal selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>}
 
@@ -56,8 +57,3 @@ const App = () => {
 }
 
 export default App;
-
-/*
-    let beersSet = new Set (beers)
-    setBeers(Array.from(beersSet)
-*/

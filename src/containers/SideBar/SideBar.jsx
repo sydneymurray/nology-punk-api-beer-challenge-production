@@ -2,7 +2,7 @@ import React from 'react'
 import "./SideBar.scss"
 
 const SideBar = (props) => {
-    const {searchText, setSearchText, showHighABV, setShowHighABV, showClassic, setShowClassic, showAcidity, setShowAcidity} = props
+    const {displayedBeers, searchText, setSearchText, showHighABV, setShowHighABV, showClassic, setShowClassic, showAcidity, setShowAcidity} = props
 
     const handleInput = (event) => {
         setSearchText(event.target.value)
@@ -26,6 +26,8 @@ const SideBar = (props) => {
                 <h3 className="options__label">Acidity PH &lt; 4</h3>
                 <input className="options__input" type="checkbox" checked={showAcidity} onChange={() => setShowAcidity(!showAcidity)}/>
             </div>
+            <h3 className="sidebar-container__h3">{displayedBeers} beers found</h3>
+
         </section>
     </>
 }
