@@ -29,13 +29,13 @@ html {
             width: 40px;
             background-color: rgb(211, 217, 227);
             background-color: white;
+            border-radius: 50%;
         }
         .back-to-beers-icon:hover {
             transform: scale(1.5);
             fill: #5D87E3;
             background-color: white;
             border: 3px solid black;
-            border-radius: 50%;
         }
     }
 }
