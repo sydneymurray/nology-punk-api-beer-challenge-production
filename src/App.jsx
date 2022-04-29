@@ -61,23 +61,3 @@ const App = () => {
 
 export default App;
 
-/*
-        <div className="app-container">
-            <Header/>
-            <Hero/>
-            <SideBar displayedBeers={displayedBeers} searchText={searchText} setSearchText={setSearchText}
-                showHighABV={showHighABV} setShowHighABV={setShowHighABV}
-                showClassic={showClassic} setShowClassic={setShowClassic}
-                showAcidity={showAcidity} setShowAcidity={setShowAcidity}/>
-
-            <Main setDisplayedBeers={setDisplayedBeers} beers={beers} 
-                searchText={searchText} setSearchText={setSearchText} 
-                showHighABV={showHighABV} showClassic={showClassic} showAcidity={showAcidity} 
-                selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>
-
-            {selectedBeer && <BeerModal selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>}
-            <a href="#beer-counter" className="back-to-beers">
-                <img className="back-to-beers-icon" src={backToBeersImg} alt="Back to beers" />
-            </a>
-        </div>
-*/

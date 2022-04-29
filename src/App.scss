@@ -22,13 +22,19 @@ html {
     &__back-to-beers {
         position: fixed;
         display: inline-block;
-        left: 5px;
-        bottom: 5px;
+        left: 20px;
+        bottom: 10px;
         .back-to-beers-icon {
-            fill: rgb(211, 217, 227);
-            width: 50px;
+            fill: white;
+            width: 40px;
+            background-color: rgb(211, 217, 227);
             background-color: white;
-            border: 3px solid rgb(211, 217, 227);;
+        }
+        .back-to-beers-icon:hover {
+            transform: scale(1.5);
+            fill: #5D87E3;
+            background-color: white;
+            border: 3px solid black;
             border-radius: 50%;
         }
     }
