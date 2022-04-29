@@ -1,3 +1,4 @@
+
 import {useState, useEffect} from 'react';
 import './App.scss';
 import { BeerModal } from './components/beerModal/BeerModal';
@@ -20,11 +21,9 @@ const App = () => {
 
     const getBeers = () => {
         fetchPageNumber++
-        if (fetchPageNumber === 20 ) {
-            let beersSet = new Set (allBeers)
-            setBeers(Array.from(beersSet))
-        }
-        if (fetchPageNumber > 20) return
+        if (fetchPageNumber === 20 ) setBeers(Array.from(new Set (allBeers)))
+        if (fetchPageNumber > 19) return
+
         fetch("https://api.punkapi.com/v2/beers?page=" + fetchPageNumber)
             .then(resp => resp.json())
             .then(newBeers => {
@@ -46,12 +45,12 @@ const App = () => {
                 showClassic={showClassic} setShowClassic={setShowClassic}
                 showAcidity={showAcidity} setShowAcidity={setShowAcidity}/>
 
-            <Main setDisplayedBeers={setDisplayedBeers} beers={beers} searchText={searchText} 
-                setSearchText={setSearchText} showHighABV={showHighABV} showClassic={showClassic}
-                showAcidity={showAcidity} selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>
+            <Main setDisplayedBeers={setDisplayedBeers} beers={beers} 
+                searchText={searchText} setSearchText={setSearchText} 
+                showHighABV={showHighABV} showClassic={showClassic} showAcidity={showAcidity} 
+                selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>
 
             {selectedBeer && <BeerModal selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>}
-
         </div>
     </>
 }

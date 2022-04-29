@@ -20,7 +20,6 @@
 .options{
     display: grid;
     grid-template-columns: 1fr 2ch;
-       
     &__label{
         text-align: left;
         margin-top: 2ch;
@@ -30,3 +29,8 @@
     }
 }
 
+@media screen and (max-width: 630px) {
+    .sidebar-container{
+        margin-top: 140px;
+    }
+}
