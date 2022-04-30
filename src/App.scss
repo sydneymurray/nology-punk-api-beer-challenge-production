@@ -12,6 +12,8 @@ html {
     "beer-counter beer-counter beer-counter" auto
     ". sidebar-container main-container" auto /
     2ch 25ch 1fr;
+    background-image: url("./images/Back-Ground-Texture-2.jpg");
+    background-attachment: scroll;
     gap: 1ch;
     padding: 1ch;
     &__beer-count{
