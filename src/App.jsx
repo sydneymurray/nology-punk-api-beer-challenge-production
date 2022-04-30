@@ -2,7 +2,7 @@
 import {useState, useEffect} from 'react';
 import './App.scss';
 import backToBeersImg from "./images/back-to-beers.svg"
-import { BeerModal } from './components/beerModal/BeerModal';
+import { BeerModal } from './components/BeerModal/BeerModal';
 import Header from './containers/Header/Header';
 import Hero from './containers/Hero/Hero';
 import Main from './containers/Main/Main';
@@ -52,7 +52,7 @@ const App = () => {
                 selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>
 
             {selectedBeer && <BeerModal selectedBeer={selectedBeer} setSelectedBeer={setSelectedBeer}/>}
-            
+
             <a href="#the-beers" className="app-container__back-to-beers">
                 <img className="back-to-beers-icon" src={backToBeersImg} alt="Back to beers" />
             </a>

@@ -4,7 +4,7 @@
     margin-right: 10ch;
     grid-area: header-container;
     text-align: center;
-    border: 3px solid white;
+    border: 4px solid white;
     &__h1{
         display: block;
         margin-left: auto;
@@ -18,27 +18,4 @@
 }
 
 
-/*
-
-.header-container{
-
-    width: 100%;
-    margin-right: 10ch;
-    grid-area: header-container;
-    text-align: center;
-
-    &__h1{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        font-size: 3em;
-        padding: 0.5ch;
-        background-color: rgb(211, 217, 227);
-        box-shadow: 0 0 0.5rem 0 rgb(0 0 0 / 20%);
-    }
-}
-
-
-*/
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Beer from '../../components/beer/Beer'
+import BeerCard from '../../components/BeerCard/BeerCard'
 import "./Main.scss"
 
 const Main = (props) => {
@@ -20,7 +20,7 @@ const Main = (props) => {
     return <>
         {!selectedBeer && <h2 className='beer-counter' id="the-beers">Available Beers: {beers.length}</h2>}
         <section className="main-container">
-            {filteredBeers.map((beer, index) => <Beer key={index} beer={beer} setSelectedBeer={setSelectedBeer}/>)}
+            {filteredBeers.map((beer, index) => <BeerCard key={index} beer={beer} setSelectedBeer={setSelectedBeer}/>)}
         </section>
     </>
 }

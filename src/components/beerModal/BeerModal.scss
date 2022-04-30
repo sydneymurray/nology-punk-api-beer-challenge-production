@@ -23,7 +23,9 @@ $column-width: 220px;
     background-color: white;
     border: 5px solid rgb(88, 11, 11);
     border-radius: 10px;  
-    overflow: scroll;
+    //overflow: scroll;
+    background-image: url("../../images/White-Grunge-Wall-Texture2.webp");
+    background-attachment: fixed;
 }
 
 .beer-image{

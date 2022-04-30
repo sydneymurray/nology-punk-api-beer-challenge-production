@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Beer.scss"
+import "./BeerCard.scss"
 import blackBottle from "../../images/Empty-Bottle.webp"
 
 const Beer = ({beer, setSelectedBeer}) => {
