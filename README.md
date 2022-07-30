@@ -1,6 +1,9 @@
 # Nology Punk API Challenge
 The purpose of this project is to display a selction of beers from a database hosted at: \
-https://api.punkapi.com/v2/beers
+https://api.punkapi.com/v2/beers 
+<br><br>
+<img src="./public/App-Screenshot.png" alt="screenshot of my project" width="600px" height = "auto">
+<br><br>
 
 ## How to build this app
 mkdir Brew-Dog-Beers \
